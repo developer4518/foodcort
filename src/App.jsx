@@ -1,5 +1,11 @@
 import React from 'react';
 
+// Both call-to-action buttons and the floating WhatsApp icon open this same chat.
+// Use the country code and number without spaces or a leading +.
+const WHATSAPP_NUMBER = '919818299706';
+const WHATSAPP_MESSAGE = "Hi! I'd like to get 20% extra. Please share the details.";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
 const dishes = [
   {
     number: '01',
@@ -67,8 +73,26 @@ function App() {
               Pull up a chair. We make the sort of food that brings everyone to the table—and keeps them there.
             </p>
             <div className="hero__actions">
-              <a className="button button--dark" href="#menu">Take a look at the menu <span aria-hidden="true">↗</span></a>
-              <a className="text-link" href="#story">A little about us <span aria-hidden="true">↓</span></a>
+              <a
+                className="button button--offer"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get 20% Extra <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                className="button button--whatsapp"
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.1 11.9a8.1 8.1 0 0 1-12 7.1L3 20l1.1-5a8.1 8.1 0 1 1 16-3.1Z" />
+                  <path d="M8.5 7.9c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.2.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.8s1.6-.7 1.8-1.3c.2-.7.2-1.2.1-1.3-.1-.1-.3-.2-.7-.4l-1.9-.9c-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-.8-1.9Z" />
+                </svg>
+                WhatsApp Us <span aria-hidden="true">↗</span>
+              </a>
             </div>
             <div className="hero__note">
               <span className="hero__note-icon" aria-hidden="true">✳</span>
@@ -184,10 +208,10 @@ function App() {
       </footer>
       <a
         className="whatsapp-button"
-        href="https://wa.me/919818299706?text=Hi%21%20I%27d%20like%20to%20claim%20the%2010%25%20discount."
+        href={WHATSAPP_URL}
         target="_blank"
-        rel="noreferrer"
-        aria-label="Claim 10% off via WhatsApp"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp Us — ask about the 20% extra offer"
       >
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20.1 11.9a8.1 8.1 0 0 1-12 7.1L3 20l1.1-5a8.1 8.1 0 1 1 16-3.1Z" />

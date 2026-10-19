@@ -178,7 +178,50 @@ p {
 .hero__actions {
   display: flex;
   align-items: center;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero__actions .button {
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.button--offer {
+  color: #fff;
+  background: var(--rust);
+}
+
+.button--offer:hover {
+  background: #98452f;
+}
+
+.hero__actions .button--offer span {
+  color: #f1c5ae;
+}
+
+.button--whatsapp {
+  border: 1px solid #a8c7b0;
+  color: #1d653e;
+  background: #eef5ec;
+}
+
+.button--whatsapp:hover {
+  background: #dceedd;
+}
+
+.hero__actions .button--whatsapp span {
+  color: #1d653e;
+}
+
+.button--whatsapp svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
 }
 
 .button {
@@ -941,9 +984,13 @@ p {
   }
 
   .hero__actions {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
-    gap: 17px;
+    gap: 12px;
+  }
+
+  .hero__actions .button {
+    width: 100%;
   }
 
   .hero__image-wrap {
